@@ -3,6 +3,6 @@ public class Aluno {
 	String nome;
 	double numero;
 	int num;
-	
+	double teste;
 
 }
