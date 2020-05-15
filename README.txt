@@ -2,7 +2,7 @@ ALUNO
 string id
 string nome
 
-controle de erro para q  tenha dois Id igual
+controle de erro para q n tenha dois Id igual
 
 CURSO
 Strinf nome
