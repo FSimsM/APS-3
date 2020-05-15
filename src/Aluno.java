@@ -4,5 +4,5 @@ public class Aluno {
 	double numero;
 	int num;
 	double teste;
-
+	String thiago;
 }
