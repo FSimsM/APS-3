@@ -1,10 +1,11 @@
+package src;
 
 public class InstanciaRaiz {
 	
-	private double numero;
-	private double indice;
-	
-	public InstanciaRaiz(double numero, double indice) {
+	private final double numero;
+	private final double indice;
+
+	public InstanciaRaiz(final double numero, final double indice) {
 		this.numero = numero;
 		this.indice = indice;
 	}
