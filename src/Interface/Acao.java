@@ -1,4 +1,5 @@
 package Interface;
 
 
-public enum Acao {POTENCIA, RAIZ, HIPOTENUSA, SAIR}
+public enum Acao {cursos, alunos, limparHistorico, redimento, incluirNovoAluno, novoCurso, 
+					novoRendimento, SAIR}
