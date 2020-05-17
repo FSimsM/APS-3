@@ -27,7 +27,7 @@ public class Controller {
 			if(resposta == Acao.limparHistorico) {
 				
 			}
-			if(resposta == Acao.redimento) {
+			if(resposta == Acao.rendimento) {
 				
 			}if(resposta == Acao.incluirNovoAluno) {
 				
