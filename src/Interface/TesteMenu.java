@@ -1,0 +1,12 @@
+package Interface;
+
+public class TesteMenu {
+	
+	public static void main(String[] args) {
+		
+		Controller c = new Controller(new View());
+		c.init();
+		
+	}
+
+}

@@ -1,3 +1,4 @@
+
 public class Nota {
     String idNota;
 	double NP1;
