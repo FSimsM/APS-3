@@ -10,8 +10,8 @@ import java.util.List;
 
 import entidade.Nota;
 
-public class LeitorNotasALPOOGra2019 {
-	public static String path = "filesCSV/ALPOO_GRADUACAO_2019.csv";
+public class LeitorNotasLPOOGra2019 {
+	public static String path = "filesCSV/LPOO_GRADUACAO_2019.csv";
 
 	public static List<Nota> getNotas() {
 
@@ -42,5 +42,6 @@ public class LeitorNotasALPOOGra2019 {
 		return notas;
 
 	}
+
 
 }

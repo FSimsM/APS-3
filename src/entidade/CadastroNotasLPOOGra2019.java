@@ -4,10 +4,10 @@ import java.util.Collection;
 import java.util.Map;
 import java.util.TreeMap;
 
-public class CadastroNotasALPOOGra2019 {
+public class CadastroNotasLPOOGra2019 {
 	private Map<String, Nota> notaPorID;
 
-	public CadastroNotasALPOOGra2019() {
+	public CadastroNotasLPOOGra2019() {
 		notaPorID = new TreeMap<String, Nota>();
 	}
 
@@ -28,12 +28,13 @@ public class CadastroNotasALPOOGra2019 {
 	@Override
 	public String toString() {
 		String res = "";
-		res += "Notas ALPOO Graducao 2019:\n";
+		res += "Notas LPOO Graducao 2019:\n";
 		for (String id : notaPorID.keySet()) {
 			res += " " + notaPorID.get(id) + "\n";
 		}
 		res += "\n";
 		return res;
 	}
+
 
 }
