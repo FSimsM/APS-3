@@ -10,9 +10,8 @@ public static void main(String[] args) {
 		
 		List<Curso> cursos = LeitorCursos.getCursos();
 		
-		for(Curso curso: cursos ) {
-			System.out.println(curso);
-		}
+		Curso curso = new Curso();
+		curso.
 		
 	}
 
