@@ -1,6 +1,8 @@
 package teste;
 
 import java.util.List;
+
+import entidade.CadastroCurso;
 import entidade.Curso;
 import leituraCSV.LeitorCursos;
 
@@ -10,8 +12,10 @@ public static void main(String[] args) {
 		
 		List<Curso> cursos = LeitorCursos.getCursos();
 		
-		Curso curso = new Curso();
-		curso.
+		CadastroCurso cadastro = new CadastroCurso();
+		cadastro.addCurso(cursos);
+		
+		System.out.println(cadastro);
 		
 	}
 

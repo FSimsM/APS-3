@@ -11,8 +11,8 @@ public class CadastroCurso {
 		cursosPorId = new TreeMap<String, Curso>();
 	}
 
-	public void addCurso(Curso curso) {
-		cursosPorId.put(curso.getNome(), curso);
+	public void addCurso(Curso cursos) {
+		cursosPorId.put(cursos.getNome(), cursos);
 	}
 
 	public void addCurso(Collection<Curso> curso) {
@@ -35,4 +35,7 @@ public class CadastroCurso {
 		res += "\n";
 		return res;
 	}
+
+
+
 }

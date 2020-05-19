@@ -11,9 +11,9 @@ public class NovoAluno {
 	public static String path = "filesCSV/alunos.csv";
 	
 	public static void addAluno() {
-	System.out.println("Digite o ID do aluno que vocÊ deseja adicionar");
+	System.out.println("Digite o ID do aluno que você deseja adicionar");
 	String ID = sc.next();
-	System.out.println("Digite o nome do aluno que vocÊ deseja adicionar");
+	System.out.println("Digite o nome do aluno que você deseja adicionar");
 	String nome = sc.next();
 	
 	String[] lines = new String[] {ID +";"+ nome};
