@@ -27,6 +27,8 @@ public class Controlador {
 				incluirAluno();
 			} else if(acao == Acao.LISTAR) {
 				listarAluno();
+			} else if(acao == Acao.LISTARC) {
+				listarCurso();
 			}
 		}
 		
@@ -56,6 +58,10 @@ public class Controlador {
 		}
 		InputUtils.saveAlunos(alunos);
 		System.out.println("Termino do programa");
+	}
+	
+	private void listarCurso() {
+		UserInterface.listarCurso(cadastroC);
 	}
 
 }

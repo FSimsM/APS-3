@@ -1,3 +1,3 @@
 package controlador;
 
-public enum Acao {LISTAR, INCLUIR, SAIR}
+public enum Acao {LISTAR, INCLUIR, LISTARC, SAIR}

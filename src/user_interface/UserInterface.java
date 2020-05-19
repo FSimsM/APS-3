@@ -13,8 +13,10 @@ public class UserInterface {
 		Acao acao = null;
 		while(acao==null) {
 			System.out.println("Entre com uma das opcoes abaixo:");
-			System.out.println("1 - para Listar");
-			System.out.println("2 - para Incluir");
+			System.out.println("1 - para Listar Alunos");
+			System.out.println("2 - para Incluir Aluno");
+			System.out.println("3 - para Listar Cursos");
+			System.out.println("4 - para Incluir Curso");
 			System.out.println("0 - para Sair");
 			acao = getAcaoUsuario();
 			
