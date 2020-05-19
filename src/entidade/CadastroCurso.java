@@ -15,7 +15,7 @@ public class CadastroCurso {
 		cursosPorId.put(curso.getNome(), curso);
 	}
 
-	public void addCurso(Collection<Aluno> alunos) {
+	public void addCurso(Collection<Curso> curso) {
 		for (Curso cursos : curso) {
 			addCurso(cursos);
 		}
