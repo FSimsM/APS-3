@@ -18,6 +18,14 @@ public class NovoCurso {
 	System.out.println("Digite o ano do curso");
 	String  ano =  sc.next();
 	
+	File arquivo = new File ("filesCSV/"+ nome +"_"+ nivel +"_"+ ano +".csv");
+	try {
+		arquivo.createNewFile();
+	}
+	catch (IOException e) {
+
+	}
+	
 	String[] lines = new String[] {nome +";"+ nivel +";"+ ano};
 	
 	try (BufferedWriter bw = new BufferedWriter(new FileWriter(path, true))) {
