@@ -1,4 +1,4 @@
-package io_utils;
+package leitorCSV;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
@@ -14,9 +14,9 @@ import java.util.List;
 
 import entidade.Aluno;
 
-public class InputUtils {
+public class LeitorAluno {
 	
-	public static String path = "files/alunos.csv";
+	public static String path = "filesCSV/alunos.csv";
 	
 	public static List<Aluno> getAlunos(){
 		

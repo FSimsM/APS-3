@@ -16,9 +16,9 @@ public class CadastroAlunos {
 		alunosByRa.put(aluno.getRa(), aluno);
 	}
 	
-	public void addAluno(Collection<Aluno> alunos) {
-		for(Aluno aluno: alunos) {
-			addAluno(aluno);
+	public void addAluno(Collection<Aluno> aluno) {
+		for(Aluno alunos: aluno) {
+			addAluno(alunos);
 		}
 	}
 	

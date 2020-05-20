@@ -4,13 +4,13 @@ import java.util.List;
 
 import entidade.Aluno;
 import entidade.CadastroAlunos;
-import io_utils.InputUtils;
+import leitorCSV.LeitorAluno;
 
 public class TesteCadastroAlunos {
 	
 	public static void main(String[] args) {
 		
-		List<Aluno> alunos = InputUtils.getAlunos();
+		List<Aluno> alunos = LeitorAluno.getAlunos();
 		
 		CadastroAlunos cadastro = new CadastroAlunos();
 		cadastro.addAluno(alunos);

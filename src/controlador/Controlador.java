@@ -6,12 +6,15 @@ import java.util.Map;
 
 import entidade.Aluno;
 import entidade.CadastroAlunos;
-import io_utils.InputUtils;
+import entidade.Curso;
+import leitorCSV.LeitorAluno;
+import entidade.CadastroCursos;
 import user_interface.UserInterface;
 
 public class Controlador {
 	
 	CadastroAlunos cadastro;
+	CadastroCursos cadastroC;
 	
 	public Controlador() {
 		cadastro = new CadastroAlunos();
@@ -27,9 +30,9 @@ public class Controlador {
 				incluirAluno();
 			} else if(acao == Acao.LISTAR) {
 				listarAluno();
-			} else if(acao == Acao.LISTARC) {
+			} else if(acao == Acao.LISTARC)
 				listarCurso();
-			}
+			
 		}
 		
 		finalizacao();
@@ -45,7 +48,7 @@ public class Controlador {
 	}
 	
 	public void preparacao() {
-		List<Aluno> alunos = InputUtils.getAlunos();
+		List<Aluno> alunos = LeitorAluno.getAlunos();
 		cadastro.addAluno(alunos);
 	}
 	
@@ -56,12 +59,13 @@ public class Controlador {
 			Aluno aluno = alunosByRa.get(ra);
 			alunos.add(aluno);
 		}
-		InputUtils.saveAlunos(alunos);
+		LeitorAluno.saveAlunos(alunos);
 		System.out.println("Termino do programa");
 	}
 	
 	private void listarCurso() {
-		UserInterface.listarCurso(cadastroC);
+		UserInterface.listarCursos(cadastroC);
 	}
+	
 
 }

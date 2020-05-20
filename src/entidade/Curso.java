@@ -1,6 +1,7 @@
 package entidade;
 
 public class Curso {
+	
 	private String nomeC;
 	private String nivel;
 	private int ano;

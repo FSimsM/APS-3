@@ -6,6 +6,8 @@ import java.util.Scanner;
 import controlador.Acao;
 import entidade.Aluno;
 import entidade.CadastroAlunos;
+import entidade.Curso;
+import entidade.CadastroCursos;
 
 public class UserInterface {
 	
@@ -31,6 +33,8 @@ public class UserInterface {
 			return Acao.LISTAR;
 		}else if(entrada.strip().equals("2")) {
 			return Acao.INCLUIR;
+		}else if(entrada.strip().equals("3")) {
+			return Acao.LISTARC;
 		}else  if(entrada.strip().equals("0")) {
 			return Acao.SAIR;
 		} else {
@@ -100,14 +104,23 @@ public class UserInterface {
 			System.out.println("Por favor entre com um numero real positivo menor que 10");
 			return getNota();
 		}
-		
+	}	
+	
+	
+	public static void listarCursos(CadastroCursos cursos) {
+		System.out.println("Todos os cursos cadastrados: ");
+		Map<String, Curso> cursosByNome = cursos.getCursos();
+		for(String nomeC: cursosByNome.keySet()) {
+			Curso curso = cursosByNome.get(nomeC);
+			System.out.println("-----------------------");
+			System.out.println("Ra: " + nomeC);
+			System.out.println("Nome: " + curso.getNivel());
+			System.out.println("Nota: " + curso.getAno());
+		}
+		System.out.println("-----------------------");
 	}
+	
 
 }
-
-
-
-
-
-
-
+	
+	

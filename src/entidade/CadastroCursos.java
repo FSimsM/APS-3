@@ -4,39 +4,37 @@ import java.util.Collection;
 import java.util.Map;
 import java.util.TreeMap;
 
-
 public class CadastroCursos {
-	
-	private Map<Integer, Curso> CursosByNome;
-	
+
+	private Map<String, Curso> cursosByNome;
+
 	public CadastroCursos() {
-		CursosByNome = new TreeMap<Integer, Curso>();
+		cursosByNome = new TreeMap<String, Curso>();
 	}
-	
-	public void addCurso(Aluno aluno) {
-		CursosByNome.put(aluno.getNome(), curso);
+
+	public void addCurso(Curso curso) {
+		cursosByNome.put(curso.getNomeC(), curso);
 	}
-	
-	public void addCurso(Collection<Aluno> curso) {
-		for(Curso curso: curso) {
-			addCurso(curso);
+
+	public void addCurso(Collection<Curso> curso) {
+		for(Curso cursos : curso) {
+			addCurso(cursos);
 		}
 	}
-	
-	public Map<Integer, Aluno> getAlunos(){
-		return CursosByNome;
+
+	public Map<String, Curso> getCursos() {
+		return cursosByNome;
 	}
-	
+
 	@Override
 	public String toString() {
 		String res = "";
 		res += "Cadastros:\n";
-		for(int ra: CursosByNome.keySet()) {
-			res += "\t" + ra + ": " + CursosByNome.get(ra) + "\n";
+		for(String nomeC: cursosByNome.keySet()) {
+			res += "\t" + nomeC + ": " + cursosByNome.get(nomeC) + "\n";
 		}
 		res += "\n";
 		return res;
 	}
-
 	
 }
