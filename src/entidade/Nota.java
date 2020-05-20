@@ -85,8 +85,8 @@ public class Nota {
 		res += "NP2: " + NP2 + "\n";
 		res += "Reposicao: " + reposicao + "\n";
 		res += "Exame: " + exame + "\n";
-		res += "Media:"  + media + "\n";
-		res += "aprovado"  + aprovado + "\n";
+		res += "Media: "  + media + "\n";
+		res += "aprovado: "  + aprovado + "\n";
 		return res;
 	}
     

@@ -11,8 +11,8 @@ public class View {
 		System.out.println("Escolha  o numero referente ao oque voce quer acessar?");
 		System.out.println("1 - Para ver todos os cursos.");
 		System.out.println("2 - Para ver todos os alunos.");
-		System.out.println("3 - Para limpar histórico.");
-		System.out.println("4 - Para ver lista de rendimento.");
+		System.out.println("3 - Para listar histórico de um aluno.");
+		System.out.println("4 - Para ver lista de rendimento de um curso.");
 		System.out.println("5 - Para incluir um novo aluno.");
 		System.out.println("6 - Para incluir um novo curso.");
 		System.out.println("7 - Para incluir novo rendimento.");
