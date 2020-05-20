@@ -1,5 +1,5 @@
 package Interface;
 
 
-public enum Acao {cursos, alunos, limparHistorico, rendimento, incluirNovoAluno, novoCurso, 
+public enum Acao {cursos, alunos, historicoAluno, rendimento, novoAluno, novoCurso, 
 					novoRendimento, SAIR}

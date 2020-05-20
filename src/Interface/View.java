@@ -40,9 +40,9 @@ public class View {
 		switch(escolha) {
 			case "1": return Acao.cursos;
 			case "2": return Acao.alunos;
-			case "3": return Acao.limparHistorico;
+			case "3": return Acao.historicoAluno;
 			case "4": return Acao.rendimento;
-			case "5": return Acao.incluirNovoAluno;
+			case "5": return Acao.novoAluno;
 			case "6": return Acao.novoCurso;
 			case "7": return Acao.novoRendimento;
 			case "0": return Acao.SAIR;
@@ -52,7 +52,7 @@ public class View {
 	}
 	
 	public void sendGoodByMessage() {
-		System.out.println("O programa terminou bye bye");
+		System.out.println("O programa terminou");
 	}
 	
 	class AcaoNaoExisteException extends IOException{

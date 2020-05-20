@@ -12,7 +12,6 @@ public class Rendimento {
 		this.media = media;
 	}
 
-
 	public Aluno getAluno() {
 		return aluno;
 	}

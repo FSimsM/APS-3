@@ -14,13 +14,14 @@ import entidade.Rendimento;
 public class LeitorNotas {
     static Scanner sc = new Scanner(System.in);
     static Rendimento r = new Rendimento(null, null, null);
-    
+    static double media;
+    static boolean aprovado;
     
 
     public static List<Nota> getNotas() {
     System.out.println("Digite o nome da matéria do curos que você quer a nota");
     String nome = sc.next();
-    System.out.println("Digite o nivel do curso que você quer a nota(POSGRADUACAO ou GRADUACAO)");
+    System.out.println("Digite o nivel do curso que você quer a nota(POS_GRADUACAO ou GRADUACAO)");
     String nivel = sc.next();
     System.out.println("Digite o nome do ano do curso que você quer a nota");
     String ano = sc.next();
@@ -30,7 +31,15 @@ public class LeitorNotas {
 
     if (nivel.equals("GRADUACAO")) {
         path =  ("filesCSV/GraduacaoCSV/"+ nome +"_"+ nivel +"_"+ ano +".csv");
-     
+        media = r.mediaG(0.0, 0.0, 0.0, 0.0);
+        aprovado = r.aprovadoG(0.0);
+    }
+    else if(nivel.equals("POS_GRADUACAO")){
+    	  path =  ("filesCSV/PosGraduacaoCSV/"+ nome +"_"+ nivel +"_"+ ano +".csv");
+          media = r.mediaPG(0.0, 0.0, 0.0, 0.0);
+          aprovado = r.aprovadoPG(0.0);
+    }
+        
         // try-with-resource
         try (BufferedReader in = new BufferedReader(
                 new InputStreamReader(new FileInputStream(path), StandardCharsets.UTF_8))) {
@@ -43,8 +52,8 @@ public class LeitorNotas {
                 double NP2 = Double.parseDouble(palavras[2]);
                 double reposicao = Double.parseDouble(palavras[3]);
                 double exame = Double.parseDouble(palavras[4]);
-                double media = r.mediaG(NP1, NP2, reposicao, exame);
-                boolean aprovado = r.aprovadoG(r.mediaG(NP1, NP2, reposicao, exame));
+                media = r.mediaG(NP1, NP2, reposicao, exame);
+                aprovado = r.aprovadoG(r.mediaG(NP1, NP2, reposicao, exame));
     
                 Nota nota = new Nota(id, NP1, NP2, reposicao, exame, media, aprovado);
 
@@ -57,41 +66,6 @@ public class LeitorNotas {
         }
 
         return notas;
-
+          
     }
-    
-    else  {
-        path = ("filesCSV/PosGraduacaoCSV/"+ nome +"_"+ nivel +"_"+ ano +".csv");
-    
-     // try-with-resource
-        try (BufferedReader in = new BufferedReader(
-                new InputStreamReader(new FileInputStream(path), StandardCharsets.UTF_8))) {
-            String linha;
-            while ((linha = in.readLine()) != null) {
-                String[] palavras = linha.split(";");
-
-                String id = palavras[0];
-                double NP1 = Double.parseDouble(palavras[1]);
-                double NP2 = Double.parseDouble(palavras[2]);
-                double reposicao = Double.parseDouble(palavras[3]);
-                double exame = Double.parseDouble(palavras[4]);
-                double media = r.mediaPG(NP1, NP2, reposicao, exame);
-                boolean aprovado = r.aprovadoPG(r.mediaG(NP1, NP2, reposicao, exame));
-    
-                Nota nota = new Nota(id, NP1, NP2, reposicao, exame, media, aprovado);
-
-                notas.add(nota);
-      
-            }
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        return notas;
-
-    }
-      
-    }
-
 }

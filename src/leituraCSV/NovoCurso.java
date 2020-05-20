@@ -14,16 +14,16 @@ public class NovoCurso {
     public static void novoCurso() {
     System.out.println("Digite o nome do curso");
     String  nome =  sc.next();
-    System.out.println("Digite o nivel do curso (POSGRADUACAO ou GRADUACAO)");
+    System.out.println("Digite o nivel do curso (POS_GRADUACAO ou GRADUACAO)");
     String  nivel =  sc.next();
     System.out.println("Digite o ano do curso");
     String  ano =  sc.next();
 
     if(nivel.equals("GRADUACAO")) {
-        arquivo = new File ("filesCSV/GraduacaoCSV/"+ nome +""+ nivel +""+ ano +".csv");
+        arquivo = new File ("filesCSV/GraduacaoCSV/"+ nome +"_"+ nivel +"_"+ ano +".csv");
     }
-    else {
-        arquivo = new File ("filesCSV/PosGraduacaoCSV/"+ nome +""+ nivel +"_"+ ano +".csv");
+    else if(nivel.equals("POS_GRADUACAO")){
+        arquivo = new File ("filesCSV/PosGraduacaoCSV/"+ nome +"_"+ nivel +"_"+ ano +".csv");
     }
     try {
         arquivo.createNewFile();

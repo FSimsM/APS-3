@@ -45,7 +45,7 @@ public class Controller {
 
 				System.out.println(cadastro);
 			}
-			if(resposta == Acao.limparHistorico) {
+			if(resposta == Acao.historicoAluno) {
 				
 			}
 			if(resposta == Acao.rendimento) {
@@ -57,13 +57,16 @@ public class Controller {
 				System.out.println(cadastrosNotas);
 				
 			}
-			if(resposta == Acao.incluirNovoAluno) {
+			if(resposta == Acao.novoAluno) {
 				NovoAluno novoAluno = new NovoAluno();
 				novoAluno.AddAluno();
 				
 			}
 			if(resposta == Acao.novoCurso) {
 				NovoCurso.novoCurso();
+				
+			}
+			if(resposta == Acao.novoRendimento) {
 				
 			}
 			if(resposta == Acao.SAIR) {
