@@ -6,9 +6,8 @@ import java.util.Map;
 
 import entidade.Aluno;
 import entidade.CadastroAlunos;
-import entidade.Curso;
-import leitorCSV.LeitorAluno;
 import entidade.CadastroCursos;
+import leitorCSV.LeitorAluno;
 import user_interface.UserInterface;
 
 public class Controlador {

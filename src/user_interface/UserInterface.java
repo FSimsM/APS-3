@@ -27,19 +27,20 @@ public class UserInterface {
 	}
 	
 	private static Acao getAcaoUsuario() {
-		Scanner in = new Scanner(System.in);
-		String entrada = in.next();
-		if(entrada.strip().equals("1")) {
-			return Acao.LISTAR;
-		}else if(entrada.strip().equals("2")) {
-			return Acao.INCLUIR;
-		}else if(entrada.strip().equals("3")) {
-			return Acao.LISTARC;
-		}else  if(entrada.strip().equals("0")) {
-			return Acao.SAIR;
-		} else {
-			System.out.println("Acao nao reconhecida\n");
-			return null;
+		try (Scanner in = new Scanner(System.in)) {
+			String entrada = in.next();
+			if(entrada.strip().equals("1")) {
+				return Acao.LISTAR;
+			}else if(entrada.strip().equals("2")) {
+				return Acao.INCLUIR;
+			}else if(entrada.strip().equals("3")) {
+				return Acao.LISTARC;
+			}else  if(entrada.strip().equals("0")) {
+				return Acao.SAIR;
+			} else {
+				System.out.println("Acao nao reconhecida\n");
+				return null;
+			}
 		}
 	}
 	
@@ -76,6 +77,7 @@ public class UserInterface {
 	
 	private static int getId() {
 		System.out.println("Entre com o ra do aluno");
+		@SuppressWarnings("resource")
 		Scanner in = new Scanner(System.in);
 		String idPalavra = in.next();
 		try {
@@ -91,6 +93,7 @@ public class UserInterface {
 
 	private static double getNota() {
 		System.out.println("Entre com a nota do aluno");
+		@SuppressWarnings("resource")
 		Scanner in = new Scanner(System.in);
 		String notaPalavra = in.next();
 		try {
