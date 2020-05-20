@@ -13,6 +13,7 @@ import leituraCSV.LeitorCursos;
 import leituraCSV.LeitorNotas;
 import leituraCSV.NovoAluno;
 import leituraCSV.NovoCurso;
+import leituraCSV.NovoRendimento;
 
 public class Controller {
 	
@@ -67,7 +68,7 @@ public class Controller {
 				
 			}
 			if(resposta == Acao.novoRendimento) {
-				
+				NovoRendimento.novoRendimento();
 			}
 			if(resposta == Acao.SAIR) {
 				view.sendGoodByMessage();
