@@ -58,7 +58,8 @@ public class Controller {
 				
 			}
 			if(resposta == Acao.incluirNovoAluno) {
-				NovoAluno.addAluno();
+				NovoAluno novoAluno = new NovoAluno();
+				novoAluno.AddAluno();
 				
 			}
 			if(resposta == Acao.novoCurso) {
