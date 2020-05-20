@@ -8,6 +8,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
+import controle.erro.DomainException;
 import entidade.Aluno;
 
 
@@ -38,6 +39,19 @@ public class LeitorAluno {
 		}
 
 		return alunos;
-
 	}
-}
+	
+	/*public void AddAluno(Aluno aluno) throws DomainException {
+		for(Aluno alunos : getAlunos()) {
+			if(alunos.equals(aluno.getId())){
+				throw new DomainException("ID existente. tente novamente");
+				
+			}else {
+				getAlunos().add(aluno);
+				
+			}
+		}
+		*/
+	}
+	
+

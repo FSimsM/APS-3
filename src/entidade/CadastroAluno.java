@@ -4,7 +4,10 @@ import java.util.Collection;
 import java.util.Map;
 import java.util.TreeMap;
 
+import controle.erro.DomainException;
+
 public class CadastroAluno {
+	
 	private Map<String, Aluno> alunosPorId;
 
 	public CadastroAluno() {
@@ -21,8 +24,18 @@ public class CadastroAluno {
 		}
 	}
 
+	
 	public Map<String, Aluno> getAlunos() {
 		return alunosPorId;
+	}
+	
+	public void adiciona(Aluno aluno) throws DomainException {
+		if(getAlunos().containsKey(aluno.getId())) {
+			throw new DomainException ("Aluno com ID existente");
+		}else {
+			getAlunos().put(aluno.getId(), aluno);
+			 
+		}
 	}
 
 	@Override
