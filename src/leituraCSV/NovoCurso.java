@@ -8,7 +8,8 @@ import java.util.Scanner;
 
 public class NovoCurso {
 	static Scanner sc = new Scanner(System.in);
-	
+	public static String path = "filesCSV/cursos.csv";
+
 	public static void novoCurso() {
 	System.out.println("Digite o nome do curso");
 	String  nome =  sc.next();
@@ -18,15 +19,15 @@ public class NovoCurso {
 	String  ano =  sc.next();
 	
 	File arquivo = new File ("filesCSV/"+ nome +"_"+ nivel +"_"+ ano +".csv");
-	
 	try {
 		arquivo.createNewFile();
 	}
 	catch (IOException e) {
-		
+
 	}
-	String[] lines = new String[] {nome +"_"+ nivel +"_"+ ano};
-	String path = "filesCSV/cursos.csv";
+	
+	String[] lines = new String[] {nome +";"+ nivel +";"+ ano};
+	
 	try (BufferedWriter bw = new BufferedWriter(new FileWriter(path, true))) {
 	for (String line : lines) {
 	bw.write(line);
