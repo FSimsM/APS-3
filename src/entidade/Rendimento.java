@@ -33,11 +33,21 @@ public class Rendimento {
 	public void setAprovado(boolean aprovado) {
 		this.aprovado = aprovado;
 	}
-	
-	
+/*	public double mediaG(double NP1, double NP2, double reposicao, double exame) {
+        double x;
+        if (reposicao >= NP1 || reposicao >= NP2) {
+            if(NP1 < NP2) {
+                NP1 = reposicao;
+            }
+            else {
+                NP2 = reposicao;
+            }
+        }
+	}*/
+
+}
 	
 	
 	
 	
     
-}
