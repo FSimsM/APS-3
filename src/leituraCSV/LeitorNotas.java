@@ -22,14 +22,14 @@ public class LeitorNotas {
     System.out.println("Digite o nome do ano do curso que você quer a nota");
     String ano = sc.next();
 
-    String path = "filesCSV/"+ nome +""+ nivel +""+ ano +".csv";
+    String path = "filesCSV/"+ nome +"_"+ nivel +"_"+ ano +".csv";
     List<Nota> notas = new ArrayList<>();
 
     if (nivel.equals("GRADUACAO")) {
-        path =  ("filesCSV/GraduacaoCSV/"+ nome +""+ nivel +""+ ano +".csv");
+        path =  ("filesCSV/GraduacaoCSV/"+ nome +"_"+ nivel +"_"+ ano +".csv");
     }
     else {
-        path = ("filesCSV/PosGraduacaoCSV/"+ nome +""+ nivel +"_"+ ano +".csv");
+        path = ("filesCSV/PosGraduacaoCSV/"+ nome +"_"+ nivel +"_"+ ano +".csv");
     }
 
         // try-with-resource
