@@ -9,10 +9,13 @@ import java.util.List;
 import java.util.Scanner;
 
 import entidade.Nota;
+import entidade.Rendimento;
 
 public class LeitorNotas {
     static Scanner sc = new Scanner(System.in);
-
+    static Rendimento r = new Rendimento(null, null, null);
+    
+    
 
     public static List<Nota> getNotas() {
     System.out.println("Digite o nome da matéria do curos que você quer a nota");
@@ -44,10 +47,13 @@ public class LeitorNotas {
                 double NP2 = Double.parseDouble(palavras[2]);
                 double reposicao = Double.parseDouble(palavras[3]);
                 double exame = Double.parseDouble(palavras[4]);
-
-                Nota nota = new Nota(id, NP1, NP2, reposicao, exame);
+                double media = r.mediaG(NP1, NP2, reposicao, exame);
+                boolean aprovado = r.aprovadoG(r.mediaG(NP1, NP2, reposicao, exame));
+    
+                Nota nota = new Nota(id, NP1, NP2, reposicao, exame, media, aprovado);
 
                 notas.add(nota);
+      
             }
 
         } catch (IOException e) {
