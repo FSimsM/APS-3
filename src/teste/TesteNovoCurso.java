@@ -5,6 +5,7 @@ import leituraCSV.NovoCurso;
 public class TesteNovoCurso {
 	
 	public static void main(String[] args) {
-		NovoCurso.novoCurso();
+		NovoCurso novoCurso = new NovoCurso();
+        novoCurso.novoCurso();
 	}
 }

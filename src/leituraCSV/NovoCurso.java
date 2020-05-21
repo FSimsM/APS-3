@@ -7,11 +7,11 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class NovoCurso {
-	static Scanner sc = new Scanner(System.in);
-	public static  String path = "filesCSV/cursos.csv";
-	static File arquivo = new File(path);
+	Scanner sc = new Scanner(System.in);
+	public String path = "filesCSV/cursos.csv";
+	File arquivo = new File(path);
 
-	public static void novoCurso() {
+	public void novoCurso() {
 	
 		System.out.println("Digite o nome do curso");
 		String nome = sc.next();
