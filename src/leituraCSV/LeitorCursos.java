@@ -8,6 +8,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
+import controle.erro.DomainException;
 import entidade.Aluno;
 import entidade.Curso;
 
@@ -39,6 +40,16 @@ public class LeitorCursos {
 		}
 
 		return cursos;
-
+	}
+	
+	public void addCurso(Curso curso) throws DomainException{
+		for(Curso curs : getCursos()) {
+			if(curs.equals(getCursos())) {
+				throw new DomainException("Curso Existeste tente novamente");
+			}else {
+				getCursos().add(curso);
+				
+			}
+		}
 	}
 }
