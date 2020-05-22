@@ -81,8 +81,7 @@ public class Controller {
 			 	else {
 			 		System.out.println("Digite um curso existente");
 			 	}
-	
-
+			 	
 			}
 			if (resposta == Acao.novoAluno) {
 				NovoAluno novoAluno = new NovoAluno();
