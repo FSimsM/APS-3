@@ -13,20 +13,14 @@ public class NovoRendimento {
     public String path = "filesCSV/cursos.csv";
     List<Curso> cursos = LeitorCursos.getCursos();
     int x = 0;
-    String nivel;
     
     public void novoRendimento() {
     	 System.out.println("Digite o nome do curso");
     	 String nome =  sc.next();
-    	 nome.toUpperCase().strip();
-    	 do {
     	 System.out.println("Digite o nivel do curso (POS_GRADUACAO ou GRADUACAO)");
-    	 nivel =  sc.next();
-    	 nivel.toUpperCase().strip();
-    	 } while (nivel != "POS_GRADUACAO" || nivel != "GRADUACAO");
+    	 String nivel =  sc.next();
     	 System.out.println("Digite o ano do curso");
     	 String ano =  sc.next();
-    	 ano.toUpperCase().strip();
     	 
     	 for(Curso curso: cursos ) {
  			if(curso.getNome().equals(nome) && curso.getTipo().equals(nivel) && curso.getAno().equals(ano)) {

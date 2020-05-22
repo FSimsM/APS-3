@@ -16,19 +16,11 @@ public class LeitorNotas {
     static Rendimento r = new Rendimento(null, null, null);
     static double media;
     static boolean aprovado;
-    
+    static int x = 0;
 
-    public static List<Nota> getNotas() {
-    System.out.println("Digite o nome da matéria do curos que você quer a nota");
-    String nome = sc.next();
-    nome.toUpperCase().strip();
-    System.out.println("Digite o nivel do curso que você quer a nota(POS_GRADUACAO ou GRADUACAO)");
-    String nivel = sc.next();
-    nivel.toUpperCase().strip();
-    System.out.println("Digite o nome do ano do curso que você quer a nota");
-    String ano = sc.next();
-    ano.toUpperCase().strip();
+    public static List<Nota> getNotas(String nome, String nivel, String ano) {
 
+    	
     String path = "filesCSV/"+ nome +"_"+ nivel +"_"+ ano +".csv";
     List<Nota> notas = new ArrayList<>();
 

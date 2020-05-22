@@ -14,19 +14,15 @@ public class NovoCurso {
     public String path = "filesCSV/cursos.csv";
     File arquivo = new File(path);
     List<Curso> cursos = LeitorCursos.getCursos();
-
     
     public void novoCurso() {
 
         System.out.println("Digite o nome do curso");
         String nome = sc.next();
-        nome.toUpperCase().strip();
         System.out.println("Digite o nivel do curso (POS_GRADUACAO ou GRADUACAO)");
         String nivel = sc.next();
-        nivel.toUpperCase().strip();
         System.out.println("Digite o ano do curso");
         String ano = sc.next();
-        ano.toUpperCase().strip();
         int x = 0;
         
         for(Curso curso: cursos ) {
