@@ -17,10 +17,10 @@ public class LeitorHistoricoAluno {
 	String nome;
 	String nivel;
 	String ano;
+	int y = 0;
 
 	public void historicoAluno() {
-		try {
-			int y = 0;
+	
 			System.out.println("Digite o ID do aluno que você quer a nota");
 			id = sc.next();
 
@@ -38,13 +38,12 @@ public class LeitorHistoricoAluno {
 						y = 1;
 					}
 				}
-				if (y == 0) {
-					throw new DomainException("ID não existe! Tente novamente");
-				}
+				
 			}
-		} catch (DomainException e) {
-			e.getMessage();
-		}
+			if (y == 0) {
+				System.out.println("ID invalido");
+			}
+
 
 	}
 }
