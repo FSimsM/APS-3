@@ -56,32 +56,32 @@ public class Controller {
 
 			}
 			if (resposta == Acao.rendimento) {
-				System.out.println("Digite o nome da matéria do curos que você quer a nota");
+				int x = 0;
+				System.out.println("Digite o nome da matéria do curso que você quer a nota");
 				String nome = sc.next();
 				System.out.println("Digite o nivel do curso que você quer a nota(POS_GRADUACAO ou GRADUACAO)");
 				String nivel = sc.next();
 				System.out.println("Digite o ano do curso que você quer a nota");
 				String ano = sc.next();
 				
+				for (Curso curso : cursos) {
+					if ((curso.getNome().equals(nome) && curso.getTipo().equals(nivel) && curso.getAno().equals(ano))) {
+						x = 1;
+					}
+				}
 				
-				try {
-				 for(Curso curso: cursos ) {
-			 			if(!(curso.getNome().equals(nome) && curso.getTipo().equals(nivel) && curso.getAno().equals(ano))) {
-			 				throw new DomainException("Curso invalido");
-			 			}
-				 }
-				
-			 	
+			 	if (x == 1) {
 				List<Nota> notas = LeitorNotas.getNotas(nome, nivel, ano);
 
 				CadastroNotas cadastrosNotas = new CadastroNotas();
 				cadastrosNotas.addAluno(notas);
 
 				System.out.println(cadastrosNotas);
-			
-			}catch (DomainException e) {
-				e.getMessage();
-			}
+			 	}
+			 	else {
+			 		System.out.println("Digite um curso existente");
+			 	}
+	
 
 			}
 			if (resposta == Acao.novoAluno) {

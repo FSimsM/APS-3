@@ -21,6 +21,7 @@ public class LeitorHistoricoAluno {
 
 	public void historicoAluno() {
 	
+			int y = 0;
 			System.out.println("Digite o ID do aluno que você quer a nota");
 			id = sc.next();
 
@@ -38,12 +39,9 @@ public class LeitorHistoricoAluno {
 						y = 1;
 					}
 				}
-				
 			}
 			if (y == 0) {
-				System.out.println("ID invalido");
+				System.out.println("ID invalido, tente novamente");
 			}
-
-
 	}
 }
