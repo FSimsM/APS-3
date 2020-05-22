@@ -20,6 +20,7 @@ public class LeitorHistoricoAluno {
 
 	public void historicoAluno() {
 		try {
+			int y = 0;
 			System.out.println("Digite o ID do aluno que você quer a nota");
 			id = sc.next();
 
@@ -29,14 +30,16 @@ public class LeitorHistoricoAluno {
 				ano = curso.getAno();
 
 				List<Nota> notas = LeitorNotas.getNotas(nome, nivel, ano);
-				System.out.println(nome + "_" + nivel + "_" + ano);
 
 				for (Nota nota : notas) {
 					if (nota.getIdNota().equals(id)) {
+						System.out.println(nome + "_" + nivel + "_" + ano);
 						System.out.println(nota);
-					} else {
-						throw new DomainException("ID não existe! Tente novamente");
+						y = 1;
 					}
+				}
+				if (y == 0) {
+					throw new DomainException("ID não existe! Tente novamente");
 				}
 			}
 		} catch (DomainException e) {
