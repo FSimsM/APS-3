@@ -4,6 +4,7 @@ import java.io.File;
 import java.util.List;
 import java.util.Scanner;
 
+import controle.erro.DomainException;
 import entidade.Curso;
 import entidade.Nota;
 
@@ -16,25 +17,31 @@ public class LeitorHistoricoAluno {
 	String nome;
 	String nivel;
 	String ano;
-	
+
 	public void historicoAluno() {
-	System.out.println("Digite o ID do aluno que você quer a nota");
-	id = sc.next();
-	
-	for(Curso curso: cursos ) {
-		nome = curso.getNome();
-		nivel = curso.getTipo();
-		ano = curso.getAno();
-		
-		List<Nota> notas = LeitorNotas.getNotas(nome, nivel, ano);
-		System.out.println(nome +"_"+ nivel +"_"+ ano);
-		
-		for (Nota nota : notas) {
-			if (nota.getIdNota().equals(id)) {
-				System.out.println(nota);
+		try {
+			System.out.println("Digite o ID do aluno que você quer a nota");
+			id = sc.next();
+
+			for (Curso curso : cursos) {
+				nome = curso.getNome();
+				nivel = curso.getTipo();
+				ano = curso.getAno();
+
+				List<Nota> notas = LeitorNotas.getNotas(nome, nivel, ano);
+				System.out.println(nome + "_" + nivel + "_" + ano);
+
+				for (Nota nota : notas) {
+					if (nota.getIdNota().equals(id)) {
+						System.out.println(nota);
+					} else {
+						throw new DomainException("ID não existe! Tente novamente");
+					}
+				}
 			}
+		} catch (DomainException e) {
+			e.getMessage();
 		}
-	}
-		
+
 	}
 }

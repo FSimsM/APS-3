@@ -3,6 +3,7 @@ package Interface;
 import java.util.List;
 import java.util.Scanner;
 
+import controle.erro.DomainException;
 import entidade.Aluno;
 import entidade.CadastroAluno;
 import entidade.CadastroNotas;
@@ -61,25 +62,26 @@ public class Controller {
 				String nivel = sc.next();
 				System.out.println("Digite o ano do curso que você quer a nota");
 				String ano = sc.next();
-				int x = 0;
 				
+				
+				try {
 				 for(Curso curso: cursos ) {
-			 			if(curso.getNome().equals(nome) && curso.getTipo().equals(nivel) && curso.getAno().equals(ano)) {
-			 				x = 1;
+			 			if(!(curso.getNome().equals(nome) && curso.getTipo().equals(nivel) && curso.getAno().equals(ano))) {
+			 				throw new DomainException("Curso invalido");
 			 			}
 				 }
 				
-			 	if(x == 1) {
+			 	
 				List<Nota> notas = LeitorNotas.getNotas(nome, nivel, ano);
 
 				CadastroNotas cadastrosNotas = new CadastroNotas();
 				cadastrosNotas.addAluno(notas);
 
 				System.out.println(cadastrosNotas);
-			 	}
-			 	else {
-			 		System.out.println("Curso não existente");
-			 	}
+			
+			}catch (DomainException e) {
+				e.getMessage();
+			}
 
 			}
 			if (resposta == Acao.novoAluno) {

@@ -35,6 +35,8 @@ public class NovoCurso {
 				arquivo = new File("filesCSV/GraduacaoCSV/" + nome + "_" + nivel + "_" + ano + ".csv");
 			} else if (nivel.equals("POSGRADUACAO")) {
 				arquivo = new File("filesCSV/PosGraduacaoCSV/" + nome + "_" + nivel + "_" + ano + ".csv");
+			}else {
+				throw new DomainException("Digite um nivel valido 'GRADUACAO' ou 'POS_GRADUACAO'");
 			}
 			try {
 				arquivo.createNewFile();
