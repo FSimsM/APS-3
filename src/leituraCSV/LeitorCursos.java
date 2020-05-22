@@ -29,7 +29,7 @@ public class LeitorCursos {
 				String nome = palavras[0];
 				String tipo = palavras[1];
 				String ano = palavras[2];
-
+				
 				Curso curso = new Curso(nome, tipo, ano);
 
 				cursos.add(curso);

@@ -63,10 +63,13 @@ public class Controller {
 				novoAluno.AddAluno();
 				
 			}
+			if(resposta == Acao.novoCurso) {
 			NovoCurso novoCurso = new NovoCurso();
             novoCurso.novoCurso();
+			}
 			if(resposta == Acao.novoRendimento) {
-				NovoRendimento.novoRendimento();
+				NovoRendimento novoRendimento = new NovoRendimento();
+				novoRendimento.novoRendimento();
 			}
 			if(resposta == Acao.SAIR) {
 				view.sendGoodByMessage();
